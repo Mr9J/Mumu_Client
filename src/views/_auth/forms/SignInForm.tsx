@@ -41,7 +41,8 @@ const SignInForm = () => {
     const x: SignInModel = values;
     authService
       .signIn(x)
-      .then(() => {
+      .then((res) => {
+        console.log(res.data);
         window.alert("登入成功，您將被導向至首頁...");
         navigate("/");
       })

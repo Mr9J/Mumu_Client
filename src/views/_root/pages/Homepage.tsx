@@ -1,7 +1,9 @@
 import axios from "axios";
 
+const URL = import.meta.env.VITE_API_URL;
+
 axios
-  .get("https://localhost:7276/api/test")
+  .get(`${URL}/Member`)
   .then((res) => {
     console.log(res.data);
   })
