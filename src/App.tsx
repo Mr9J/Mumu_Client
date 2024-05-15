@@ -3,9 +3,9 @@ import AuthLayout from "./views/_auth/AuthLayout";
 import { SignInForm, SignUpForm } from "./views/_auth/forms";
 import RootLayout from "./views/_root/RootLayout";
 import { ThemeProvider } from "@/components/shared/theme-provider";
-import { Homepage, SocialPage } from "./views/_root/pages";
+import { Homepage } from "./views/_root/pages";
 import ProtectedLayout from "./views/_protected/ProtectedLayout";
-import { LogOut } from "./views/_protected/pages";
+import { LogOut, SocialPage } from "./views/_protected/pages";
 
 function App() {
   return (
@@ -19,11 +19,11 @@ function App() {
 
         <Route element={<RootLayout />}>
           <Route index element={<Homepage />} />
-          <Route path="/social" element={<SocialPage />} />
         </Route>
 
         {/* private routes */}
         <Route element={<ProtectedLayout />}>
+          <Route path="/social" element={<SocialPage />} />
           <Route path="/log-out" element={<LogOut />} />
         </Route>
       </Routes>

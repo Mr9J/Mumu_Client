@@ -25,7 +25,7 @@ const ProtectedLayout = () => {
     return <div>Loading</div>;
   }
 
-  return isAuthenticated ? <Outlet /> : <Navigate to="/" />;
+  return isAuthenticated ? <Outlet /> : <Navigate to="/sign-in" />;
 };
 
 export default ProtectedLayout;
