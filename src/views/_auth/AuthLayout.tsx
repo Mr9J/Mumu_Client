@@ -8,7 +8,7 @@ const AuthLayout = () => {
     <>
       <div className="flex h-dvh">
         {isAuthenticated ? (
-          <Navigate to="/" />
+          <Navigate to="/log-out" />
         ) : (
           <>
             <div className="flex flex-1 justify-center items-center flex-col py-10 overflow-auto">

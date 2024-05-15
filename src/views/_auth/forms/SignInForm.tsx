@@ -42,7 +42,7 @@ const SignInForm = () => {
     authService
       .signIn(x)
       .then((res) => {
-        console.log(res.data);
+        localStorage.setItem("currentUser", JSON.stringify(res.data));
         window.alert("登入成功，您將被導向至首頁...");
         navigate("/");
       })

@@ -168,7 +168,7 @@ const HeaderSection = () => {
           <Link to="/" className={`text-sm font-semibold leading-6`}>
             Propose
           </Link>
-          <Link to="/" className={`text-sm font-semibold leading-6`}>
+          <Link to="/social" className={`text-sm font-semibold leading-6`}>
             Social
           </Link>
         </Popover.Group>
@@ -263,7 +263,7 @@ const HeaderSection = () => {
                     Propose
                   </Link>
                   <Link
-                    to="/"
+                    to="/social"
                     className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
                       isDark ? "" : "hover:bg-gray-50"
                     }`}
