@@ -1,13 +1,6 @@
-class TokenService {
-  getToken() {
-    const userString = localStorage.getItem("currentUser");
-    if (userString) {
-      const userObj = JSON.parse(userString);
-      const token = userObj.token;
-      return token;
-    }
-    return null;
-  }
+export function GetToken() {
+  const userString = localStorage.getItem("currentUser");
+  const userObj = JSON.parse(userString!);
+  const token = userObj.token;
+  return token;
 }
-
-export default new TokenService();

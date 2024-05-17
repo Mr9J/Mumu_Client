@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import authService from "@/services/auth.service";
 import { Button } from "@/components/ui/button";
 import { CurrentUser } from "@/types";
 
@@ -9,19 +8,18 @@ const LogOut = () => {
   const [user, setUser] = useState<CurrentUser | null>(null);
 
   const logout = () => {
-    authService.logOut();
+    LogOut();
     window.alert("登出成功，您將被導向至首頁...");
     navigate("/");
   };
 
   useEffect(() => {
-    const getUser = async () => {
-      await authService.currentUser()?.then((res) => {
-        setUser(res.data);
-      });
-    };
-
-    getUser();
+    // const getUser = async () => {
+    //   await authService.currentUser()?.then((res) => {
+    //     setUser(res.data);
+    //   });
+    // };
+    // getUser();
   }, [user]);
 
   return (

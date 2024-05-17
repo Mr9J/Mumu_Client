@@ -18,8 +18,8 @@ import { useForm } from "react-hook-form";
 import { SignupValidation } from "@/lib/validation";
 import formLogo from "@/assets/_auth_img/form_logo.jpg";
 import Loader from "@/components/shared/Loader";
-import authService from "@/services/auth.service";
 import { SignUpModel } from "@/types";
+import { SignUp } from "@/services/user.service";
 
 const SignUpForm = () => {
   const navigate = useNavigate();
@@ -44,15 +44,7 @@ const SignUpForm = () => {
     const { nickname, username, email, password } = values;
     const x: SignUpModel = { nickname, username, email, password };
 
-    authService
-      .signUp(x)
-      .then(() => {
-        window.alert("註冊完成，您將被導向至登入頁面...");
-        navigate("/sign-in");
-      })
-      .catch((e) => {
-        setErrorMsg(e.response.data);
-      });
+    SignUp(x);
   }
 
   return (

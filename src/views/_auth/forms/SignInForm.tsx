@@ -18,8 +18,8 @@ import { useForm } from "react-hook-form";
 import { SigninValidation } from "@/lib/validation";
 import formLogo from "@/assets/_auth_img/form_logo.jpg";
 import Loader from "@/components/shared/Loader";
-import authService from "@/services/auth.service";
 import { SignInModel } from "@/types";
+import { SignIn } from "@/services/user.service";
 
 const SignInForm = () => {
   const navigate = useNavigate();
@@ -39,16 +39,8 @@ const SignInForm = () => {
 
   function onSubmit(values: z.infer<typeof SigninValidation>) {
     const x: SignInModel = values;
-    authService
-      .signIn(x)
-      .then((res) => {
-        localStorage.setItem("currentUser", JSON.stringify(res.data));
-        window.alert("登入成功，您將被導向至首頁...");
-        navigate("/");
-      })
-      .catch((e) => {
-        setErrorMsg(e.response.data);
-      });
+
+    SignIn(x);
   }
 
   return (
