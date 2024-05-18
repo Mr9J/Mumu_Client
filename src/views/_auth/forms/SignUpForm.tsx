@@ -40,11 +40,19 @@ const SignUpForm = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof SignupValidation>) {
+  async function onSubmit(values: z.infer<typeof SignupValidation>) {
     const { nickname, username, email, password } = values;
     const x: SignUpModel = { nickname, username, email, password };
 
-    SignUp(x);
+    await SignUp(x)
+      .then(() => {
+        console.log("註冊成功");
+        window.alert("註冊成功，您將被導向登入頁面");
+        navigate("/sign-in");
+      })
+      .catch((e) => {
+        setErrorMsg(e.response.data);
+      });
   }
 
   return (

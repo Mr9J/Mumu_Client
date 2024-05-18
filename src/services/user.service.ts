@@ -19,18 +19,7 @@ export function LogOut() {
 }
 
 export async function IsLogIn() {
-  await axios
-    .get(`${URL}/MyGo`, {
-      headers: { Authorization: GetToken() },
-    })
-    .then((res) => {
-      if (res.data === true) {
-        return true;
-      } else {
-        return false;
-      }
-    })
-    .catch((e) => {
-      console.log(e);
-    });
+  await axios.get(`${URL}/MyGo`, {
+    headers: { Authorization: GetToken() },
+  });
 }

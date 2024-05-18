@@ -37,10 +37,18 @@ const SignInForm = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof SigninValidation>) {
+  async function onSubmit(values: z.infer<typeof SigninValidation>) {
     const x: SignInModel = values;
 
-    SignIn(x);
+    await SignIn(x)
+      .then((res) => {
+        localStorage.setItem("currentUser", JSON.stringify(res.data));
+        window.alert("登入成功，您將被導向至首頁");
+        navigate("/");
+      })
+      .catch((e?) => {
+        setErrorMsg(e.response.data);
+      });
   }
 
   return (

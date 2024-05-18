@@ -11,7 +11,7 @@ const AuthLayout = () => {
           <Navigate to="/log-out" />
         ) : (
           <>
-            <div className="flex flex-1 justify-center items-center flex-col py-10 overflow-auto">
+            <div className="flex flex-1 items-center flex-col py-10 overflow-auto">
               <Outlet />
             </div>
             <img
