@@ -15,9 +15,9 @@ import headerLogo from "@/assets/_auth_img/form_logo.jpg";
 
 const exploreItems = [
   {
-    name: "Item1",
+    name: "Parallax",
     description: "Just An Item",
-    to: "/",
+    to: "/parallax",
     icon: LightBulbIcon,
   },
   {

@@ -3,7 +3,7 @@ import AuthLayout from "./views/_auth/AuthLayout";
 import { SignInForm, SignUpForm } from "./views/_auth/forms";
 import RootLayout from "./views/_root/RootLayout";
 import { ThemeProvider } from "@/components/shared/theme-provider";
-import { Homepage } from "./views/_root/pages";
+import { Homepage, ParallaxPage } from "./views/_root/pages";
 import ProtectedLayout from "./views/_protected/ProtectedLayout";
 import { LogOut, SocialPage } from "./views/_protected/pages";
 
@@ -19,6 +19,7 @@ function App() {
 
         <Route element={<RootLayout />}>
           <Route index element={<Homepage />} />
+          <Route path="/parallax" element={<ParallaxPage />} />
         </Route>
 
         {/* private routes */}

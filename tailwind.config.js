@@ -18,6 +18,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        veryDarkBlue: "#0a2a43",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -53,6 +54,7 @@ module.exports = {
         },
       },
       width: { 420: "420px" },
+      minHeight: { 1500: "1500px" },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
